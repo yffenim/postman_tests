@@ -1,4 +1,6 @@
-# Grabbing postman collection urls, senting request, saving results into word table
+# Turn a Postman Collection into a table of request results*
+
+*For when one does not have API testing set up..
 
 ## Usage
 
