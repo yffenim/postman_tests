@@ -1,11 +1,11 @@
-import json
 import os
-import requests
+import json
 import logging
+import requests
 from docx import Document
 from docx.shared import Pt
-from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.enum.section import WD_ORIENT
+from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 
 logging.basicConfig(filename='postman_requests.log', level=logging.INFO, format='%(asctime)s %(levelname)s: %(message)s')
 
@@ -79,12 +79,10 @@ def create_word_document(results, title, doc):
 
 def main():
     folder_path = './collections_json/'
-
     json_file_paths = [os.path.join(folder_path, file) for file in os.listdir(folder_path) if file.endswith('.json')]
     
+    # Create and set word page to landscape 
     doc = Document()
-    
-    # Set the page orientation to landscape
     section = doc.sections[0]
     section.orientation = WD_ORIENT.LANDSCAPE
     section.page_width, section.page_height = section.page_height, section.page_width
